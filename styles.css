@@ -1,0 +1,649 @@
+:root {
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  color: #fff8ee;
+  background: #173b35;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --cream: #fff8ee;
+  --coral: #fa795f;
+  --green: #173b35;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--green);
+}
+
+button,
+a,
+label {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+label {
+  font: inherit;
+}
+
+.scene,
+.veil {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+.scene {
+  background-image:
+    var(--uploaded-background, none),
+    radial-gradient(ellipse at 78% 8%, rgba(241, 160, 111, 0.24), transparent 34%),
+    radial-gradient(ellipse at 12% 88%, rgba(90, 145, 119, 0.3), transparent 40%),
+    linear-gradient(135deg, #153a34 0%, #255047 52%, #633f3b 100%);
+  background-position: center;
+  background-size: contain, cover, cover, cover;
+  background-repeat: no-repeat;
+  transition: background-image 400ms ease;
+}
+
+.veil {
+  background: linear-gradient(180deg, rgba(12, 32, 30, 0.34), rgba(12, 32, 30, 0.4) 44%, rgba(12, 32, 30, 0.58));
+}
+
+.page-shell {
+  position: relative;
+  display: flex;
+  min-height: 100svh;
+  flex-direction: column;
+  padding: 28px clamp(22px, 5.2vw, 76px) 24px;
+}
+
+.topbar,
+.bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--cream);
+  text-decoration: none;
+}
+
+.wordmark-mark {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid rgba(255, 248, 238, 0.58);
+  border-radius: 50%;
+  color: #ffd2bd;
+  font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: 21px;
+  font-style: italic;
+}
+
+.wordmark-name {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.photo-tools {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.photo-button,
+.remove-photo {
+  border: 1px solid rgba(255, 248, 238, 0.48);
+  border-radius: 3px;
+  color: var(--cream);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+.photo-button {
+  padding: 10px 14px;
+  background: rgba(15, 38, 35, 0.18);
+}
+
+.remove-photo {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: rgba(255, 248, 238, 0.82);
+}
+
+.photo-button:hover,
+.remove-photo:hover {
+  border-color: var(--cream);
+  background-color: rgba(255, 248, 238, 0.14);
+}
+
+.remove-photo:hover {
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.invitation {
+  display: flex;
+  width: min(100%, 760px);
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  padding: 58px 0 42px;
+  text-align: center;
+}
+
+.invitation-content {
+  animation: arrive 650ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  margin: 0 0 25px;
+  color: #ffd0b7;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.kicker-line {
+  width: 26px;
+  height: 1px;
+  background: currentColor;
+}
+
+h1 {
+  max-width: 760px;
+  margin: 0;
+  font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: clamp(48px, 7vw, 88px);
+  font-weight: 400;
+  line-height: 1.04;
+}
+
+.supporting-copy {
+  margin: 20px 0 0;
+  color: rgba(255, 248, 238, 0.8);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.farewell-heart {
+  display: inline-block;
+  margin-left: 4px;
+  color: #050308;
+  font-size: 3em;
+  line-height: 0.8;
+  text-shadow: 0 0 14px rgba(213, 82, 116, 0.55);
+  -webkit-text-stroke: 1px #eadfe7;
+}
+
+.farewell-page {
+  --cream: #f2eaf0;
+  --coral: #a82c4f;
+  --green: #100d13;
+  background: #100d13;
+}
+
+.farewell-page .scene {
+  background-image:
+    var(--uploaded-background, none),
+    radial-gradient(ellipse at 50% 20%, rgba(106, 21, 50, 0.32), transparent 48%),
+    linear-gradient(145deg, #09080c 0%, #171018 55%, #2b101c 100%);
+}
+
+.farewell-page .veil {
+  background: linear-gradient(180deg, rgba(7, 5, 9, 0.5), rgba(7, 5, 9, 0.58) 52%, rgba(7, 5, 9, 0.72));
+}
+
+.farewell-page .wordmark-mark {
+  border-color: rgba(242, 234, 240, 0.58);
+  color: #d991a6;
+}
+
+.farewell-page .kicker {
+  color: #d991a6;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.farewell-page .kicker-line {
+  background: currentColor;
+}
+
+.farewell-page h1 {
+  max-width: 920px;
+  font-family: "Old English Text MT", "Cloister Black", "UnifrakturCook", Georgia, serif;
+  font-size: 96px;
+  line-height: 1.08;
+  text-shadow: 0 3px 32px rgba(163, 28, 69, 0.34);
+  text-wrap: balance;
+}
+
+.farewell-page .supporting-copy {
+  margin-top: 28px;
+  color: #e1d3dc;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 38px;
+}
+
+.farewell-page .planner-back-link {
+  color: #d7bdca;
+}
+
+.farewell-page .footer-mark {
+  color: #bb4968;
+}
+
+.poll-invitation {
+  width: min(100%, 980px);
+}
+
+.poll-content {
+  width: 100%;
+}
+
+.poll-question-row {
+  display: grid;
+  grid-template-columns: minmax(130px, 0.7fr) minmax(0, 2.3fr);
+  align-items: center;
+  gap: clamp(24px, 4vw, 50px);
+}
+
+.poll-side-note {
+  max-width: 180px;
+  justify-self: end;
+  margin: 0;
+  padding-right: 18px;
+  border-right: 1px solid rgba(255, 208, 183, 0.72);
+  color: #ffd0b7;
+  font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: 20px;
+  line-height: 1.45;
+  text-align: right;
+}
+
+.poll-question {
+  min-width: 0;
+}
+
+.planner-invitation {
+  width: min(100%, 760px);
+}
+
+.planner-content {
+  width: 100%;
+}
+
+.date-form {
+  display: grid;
+  width: min(100%, 660px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 16px;
+  margin: 32px auto 0;
+  text-align: left;
+}
+
+.date-field {
+  display: grid;
+  min-width: 0;
+  gap: 8px;
+  color: rgba(255, 248, 238, 0.9);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.date-field-wide,
+.date-form-actions {
+  grid-column: 1 / -1;
+}
+
+.date-field input,
+.date-field textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 248, 238, 0.48);
+  border-radius: 3px;
+  background: rgba(12, 32, 30, 0.38);
+  color: var(--cream);
+  font: inherit;
+  font-size: 14px;
+}
+
+.date-field input {
+  color-scheme: dark;
+}
+
+.date-field textarea {
+  min-height: 92px;
+  resize: vertical;
+}
+
+.date-field input::placeholder,
+.date-field textarea::placeholder {
+  color: rgba(255, 248, 238, 0.58);
+}
+
+.date-form-actions {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+}
+
+.date-save {
+  min-height: 50px;
+  padding: 13px 20px;
+  border: 0;
+  border-radius: 3px;
+  background: var(--coral);
+  color: #271b19;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.date-save:hover {
+  transform: translateY(-2px);
+  background: #ff9279;
+}
+
+.date-status {
+  min-height: 1.5em;
+  margin: 0;
+  color: rgba(255, 248, 238, 0.8);
+  font-size: 12px;
+  text-align: center;
+}
+
+.planner-back-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: rgba(255, 248, 238, 0.8);
+  font-size: 12px;
+  text-decoration-color: rgba(255, 248, 238, 0.5);
+  text-underline-offset: 4px;
+}
+
+.planner-back-link:hover {
+  color: var(--cream);
+}
+
+.next-page-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  padding: 14px 19px;
+  border-radius: 3px;
+  background: var(--coral);
+  color: #271b19;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.next-page-link:hover {
+  transform: translateY(-2px);
+  background: #ff9279;
+}
+
+.poll-choices {
+  display: grid;
+  width: min(100%, 570px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 34px auto 0;
+}
+
+.poll-answer {
+  min-height: 58px;
+  padding: 14px 18px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.poll-answer:hover {
+  transform: translateY(-2px);
+}
+
+.poll-answer-yes {
+  background: var(--coral);
+  color: #271b19;
+}
+
+.poll-answer-yes:hover {
+  background: #ff9279;
+}
+
+.poll-answer-no {
+  border-color: rgba(255, 248, 238, 0.65);
+  background: rgba(14, 37, 34, 0.12);
+  color: var(--cream);
+}
+
+.poll-answer-no:hover {
+  border-color: var(--cream);
+  background: rgba(255, 248, 238, 0.12);
+}
+
+.poll-response {
+  margin-top: 34px;
+  animation: arrive 350ms ease both;
+}
+
+.poll-response-note {
+  margin: 0 0 15px;
+  font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: 25px;
+}
+
+.text-button {
+  padding: 8px 4px;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 248, 238, 0.62);
+  background: transparent;
+  color: rgba(255, 248, 238, 0.9);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.text-button:hover {
+  border-color: var(--cream);
+  color: var(--cream);
+}
+
+.poll-privacy {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0;
+  color: rgba(255, 248, 238, 0.68);
+  font-size: 11px;
+}
+
+.photos-invitation {
+  width: min(100%, 920px);
+}
+
+.photos-content {
+  width: 100%;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f7a68a;
+}
+
+.bottom-bar {
+  min-height: 24px;
+  color: rgba(255, 248, 238, 0.62);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.footer-mark {
+  color: #ff9b7f;
+  font-size: 15px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+:focus-visible {
+  outline: 2px solid #ffd0b7;
+  outline-offset: 4px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@keyframes arrive {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .page-shell {
+    min-height: 100svh;
+    padding: 18px 20px 18px;
+  }
+
+  .wordmark-name {
+    font-size: 12px;
+  }
+
+  .photo-tools {
+    gap: 10px;
+  }
+
+  .photo-button {
+    padding: 9px 10px;
+    font-size: 11px;
+  }
+
+  .remove-photo {
+    font-size: 11px;
+  }
+
+  .invitation {
+    padding: 50px 0 32px;
+  }
+
+  h1 {
+    font-size: clamp(46px, 13vw, 66px);
+  }
+
+  .desktop-break {
+    display: none;
+  }
+
+  .supporting-copy {
+    max-width: 280px;
+    margin: 17px auto 0;
+    font-size: 14px;
+  }
+
+  .farewell-page h1 {
+    font-size: 58px;
+  }
+
+  .farewell-page .supporting-copy {
+    margin-top: 24px;
+    font-size: 30px;
+  }
+
+  .farewell-heart {
+    font-size: 2.6em;
+  }
+
+  .poll-question-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .date-form {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 26px;
+  }
+
+  .date-field-wide,
+  .date-form-actions {
+    grid-column: auto;
+  }
+
+  .poll-side-note {
+    max-width: none;
+    justify-self: center;
+    padding: 0;
+    border: 0;
+    font-size: 17px;
+    text-align: center;
+  }
+
+  .poll-choices {
+    width: min(100%, 340px);
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 26px;
+  }
+
+  .poll-privacy {
+    max-width: 260px;
+    justify-content: center;
+    line-height: 1.5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

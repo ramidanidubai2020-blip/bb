@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#173b35" />
+    <meta name="description" content="Plan a date together." />
+    <title>Plan Our Date</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+    <script src="date.js" defer></script>
+  </head>
+  <body data-photo-storage-key="a-little-date-details-background">
+    <div class="scene" aria-hidden="true"></div>
+    <div class="veil" aria-hidden="true"></div>
+
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="wordmark" href="poll.html" aria-label="Back to the date poll">
+          <span class="wordmark-mark" aria-hidden="true">a.</span>
+          <span class="wordmark-name">a little hello</span>
+        </a>
+        <div class="photo-tools">
+          <input id="photo-input" class="visually-hidden" type="file" accept="image/*" />
+          <label class="photo-button" for="photo-input">Choose third photo</label>
+          <button id="remove-photo" class="remove-photo" type="button" hidden>Remove photo</button>
+        </div>
+      </header>
+
+      <main class="invitation planner-invitation">
+        <div class="invitation-content planner-content">
+          <p class="kicker"><span class="kicker-line" aria-hidden="true"></span> Your date</p>
+          <h1>Let's plan<br class="desktop-break" /> our date.</h1>
+          <p class="supporting-copy">Choose a day, time, and place that feel right.</p>
+
+          <form id="date-form" class="date-form">
+            <label class="date-field">
+              <span>Date</span>
+              <input id="date-value" name="date" type="date" />
+            </label>
+            <label class="date-field">
+              <span>Time</span>
+              <input id="time-value" name="time" type="time" />
+            </label>
+            <label class="date-field date-field-wide">
+              <span>Place</span>
+              <input id="place-value" name="place" type="text" placeholder="Where should we go?" />
+            </label>
+            <label class="date-field date-field-wide">
+              <span>A note for our date</span>
+              <textarea id="note-value" name="note" rows="3" placeholder="Anything you'd like to remember?"></textarea>
+            </label>
+            <div class="date-form-actions">
+              <button class="date-save" type="submit">Save date details</button>
+              <p id="date-status" class="date-status" role="status"></p>
+            </div>
+          </form>
+          <a class="next-page-link" href="meeting.html">Choose where we meet <span aria-hidden="true">&#8594;</span></a>
+          <a class="planner-back-link" href="poll.html">Back to the poll</a>
+        </div>
+      </main>
+
+      <footer class="bottom-bar">
+        <span>JUST FOR THE TWO OF YOU</span>
+        <span class="footer-mark" aria-hidden="true">♥</span>
+      </footer>
+    </div>
+    <p id="photo-status" class="visually-hidden" role="status"></p>
+  </body>
+</html>

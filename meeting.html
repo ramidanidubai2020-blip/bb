@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#173b35" />
+    <meta name="description" content="Choose where to meet for your date." />
+    <title>Where Shall We Meet?</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+    <script src="meeting.js" defer></script>
+  </head>
+  <body data-photo-storage-key="a-little-meeting-background">
+    <div class="scene" aria-hidden="true"></div>
+    <div class="veil" aria-hidden="true"></div>
+
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="wordmark" href="date-details.html" aria-label="Back to date details">
+          <span class="wordmark-mark" aria-hidden="true">a.</span>
+          <span class="wordmark-name">a little hello</span>
+        </a>
+        <div class="photo-tools">
+          <input id="photo-input" class="visually-hidden" type="file" accept="image/*" />
+          <label class="photo-button" for="photo-input">Choose fourth photo</label>
+          <button id="remove-photo" class="remove-photo" type="button" hidden>Remove photo</button>
+        </div>
+      </header>
+
+      <main class="invitation poll-invitation">
+        <div class="invitation-content poll-content">
+          <p class="kicker"><span class="kicker-line" aria-hidden="true"></span> One more question</p>
+          <h1>Yet ingenagn?</h1>
+          <p class="supporting-copy">Choose where we should meet.</p>
+
+          <div id="meeting-choices" class="poll-choices" role="group" aria-label="Choose where to meet">
+            <button class="poll-answer poll-answer-yes" type="button" data-answer="mesalemya">A. Mesalemya</button>
+            <button class="poll-answer poll-answer-no" type="button" data-answer="abem">B. Abem</button>
+          </div>
+
+          <section id="meeting-response" class="poll-response" aria-live="polite" hidden>
+            <p id="meeting-response-note" class="poll-response-note"></p>
+            <a id="last-page-link" class="next-page-link" href="photos.html" hidden>Go to last page <span aria-hidden="true">&#8594;</span></a>
+            <button id="change-meeting" class="text-button" type="button">Choose again</button>
+          </section>
+        </div>
+        <p class="poll-privacy"><span class="status-dot" aria-hidden="true"></span> Your answer is saved only on this device</p>
+      </main>
+
+      <footer class="bottom-bar">
+        <span>JUST FOR THE TWO OF YOU</span>
+        <span class="footer-mark" aria-hidden="true">♥</span>
+      </footer>
+    </div>
+    <p id="photo-status" class="visually-hidden" role="status"></p>
+  </body>
+</html>

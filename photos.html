@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#100d13" />
+    <meta name="description" content="Thanks for your time. Luv ya." />
+    <title>A Little Goodbye</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body class="farewell-page" data-photo-storage-key="a-little-farewell-background">
+    <div class="scene" aria-hidden="true"></div>
+    <div class="veil" aria-hidden="true"></div>
+
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="wordmark" href="meeting.html" aria-label="Back to where we meet">
+          <span class="wordmark-mark" aria-hidden="true">a.</span>
+          <span class="wordmark-name">a little hello</span>
+        </a>
+        <div class="photo-tools">
+          <input id="photo-input" class="visually-hidden" type="file" accept="image/*" />
+          <label class="photo-button" for="photo-input">Choose fifth photo</label>
+          <button id="remove-photo" class="remove-photo" type="button" hidden>Remove photo</button>
+        </div>
+      </header>
+
+      <main class="invitation photos-invitation">
+        <div class="invitation-content photos-content">
+          <p class="kicker"><span class="kicker-line" aria-hidden="true"></span> A little goodbye</p>
+          <h1>Thanks for your time.</h1>
+          <p class="supporting-copy">Luv ya. <span class="farewell-heart" role="img" aria-label="Black heart">&#9829;</span></p>
+          <a class="planner-back-link" href="meeting.html">Back to where we meet</a>
+        </div>
+      </main>
+
+      <footer class="bottom-bar">
+        <span>JUST FOR THE TWO OF YOU</span>
+        <span class="footer-mark" aria-hidden="true">♥</span>
+      </footer>
+    </div>
+    <p id="photo-status" class="visually-hidden" role="status"></p>
+  </body>
+</html>

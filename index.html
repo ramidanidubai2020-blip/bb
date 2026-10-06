@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#173b35" />
+    <meta name="description" content="A little hello for someone special." />
+    <title>A Little Hello</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body data-photo-storage-key="a-little-hello-background-v2">
+    <div class="scene" aria-hidden="true"></div>
+    <div class="veil" aria-hidden="true"></div>
+
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="wordmark" href="index.html" aria-label="A Little Hello home">
+          <span class="wordmark-mark" aria-hidden="true">a.</span>
+          <span class="wordmark-name">a little hello</span>
+        </a>
+        <div class="photo-tools">
+          <input id="photo-input" class="visually-hidden" type="file" accept="image/*" />
+          <label class="photo-button" for="photo-input">Choose first photo</label>
+          <button id="remove-photo" class="remove-photo" type="button" hidden>Remove photo</button>
+        </div>
+      </header>
+
+      <main class="invitation">
+        <div class="invitation-content">
+          <p class="kicker"><span class="kicker-line" aria-hidden="true"></span> A little hello</p>
+          <h1>Indet nesh,<br class="desktop-break" /> tegadalit?</h1>
+          <p class="supporting-copy">A little hello, just for you.</p>
+          <a class="next-page-link" href="poll.html">I have a question for you <span aria-hidden="true">&#8594;</span></a>
+        </div>
+        <p class="local-note"><span class="status-dot" aria-hidden="true"></span> A little hello, made just for you</p>
+      </main>
+
+      <footer class="bottom-bar">
+        <span>THINKING OF YOU</span>
+        <span class="footer-mark" aria-hidden="true">♥</span>
+      </footer>
+    </div>
+    <p id="photo-status" class="visually-hidden" role="status"></p>
+  </body>
+</html>
